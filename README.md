@@ -58,27 +58,17 @@ Then create a databse called *user* with the tables *accounts* and *tasks*
 mysql> CREATE DATABASE user;
 mysql> USE user;
 ```
-Create table *accounts*:
+
+Create table *rank*:
 ```
-mysql> CREATE TABLE accounts (
-  user_id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(100),
-  pass VARCHAR(100),
-  email VARCHAR(100)
-  );
-```
-Create table *tasks*:
-```
-mysql> CREATE TABLE tasks (
+mysql> CREATE TABLE rank (
   id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  description VARCHAR(100),
-  user_id MEDIUMINT NOT NULL
+  studentnumber INT(10),
+  name VARCHAR(100),
+  score INT(10)
+  
 );
-```
-Then you need to add a foreign key from *accounts.user_id* to the tasks *tasks.user_id*:
-```
-mysql> ALTER TABLE tasks
-  ADD FOREIGN KEY (user_id) REFERENCES accounts (user_id);
+
 ```
 And now you are done, and your db is ready to go!
 
